@@ -1,0 +1,34 @@
+The smart steel Task 
+
+tasks_data.csv file gets loaded into a SQLite database.
+SQLite database is used for simplicity and no setup requirements
+
+app.py
+	contains a class named DB to load and retrieve data.
+
+	Contains Flask initialization for web app implementation.
+	tabulate library is used to convert the list data into a simple html table.
+	No templates/Ajax/js for simple readable code.
+
+load_data.py
+	Sample code to load data into database
+
+	
+How to run
+	1. From python, run below code from the same directory. 
+	   Make sure the tasks_data.csv file is present in the same dir as the app.py
+			from app import DB
+			db= DB()
+			db.load_data('task_data.csv')
+		It loads the csv data to a SQLite database named tasks.db table named tasks.
+		It creates another table named requests to log data requests.
+		
+	2. Exit python and run from console
+			python app.py
+		It runs the Flask app in localhost url.
+		
+	3. Open browser and goto localhost:5000, Click View data
+			Loads the entire data into the html page.
+			Adds a new record to requests table		
+	
+	
